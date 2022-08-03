@@ -1,12 +1,12 @@
 import { Header } from './components/Header';
-import { NewTaskForm } from './components/NewTaskForm';
+import { TasksDashboard } from './components/TasksDashboard';
 import './global.css';
 
 function App() {
   return (
     <>
       <Header />
-      <NewTaskForm />
+      <TasksDashboard />
     </>
   );
 }
