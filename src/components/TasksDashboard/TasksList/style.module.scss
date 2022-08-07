@@ -109,6 +109,10 @@
   color: #808080;
   border-top: 1px solid #333333;
 
+  @media screen and (max-width: 768px) {
+    padding: 2rem 0.75rem;
+  }
+
   img {
     margin-bottom: 1.5rem;
   }
@@ -121,5 +125,6 @@
   span {
     font-size: 1rem;
     line-height: 1.4;
+    text-align: center;
   }
 }

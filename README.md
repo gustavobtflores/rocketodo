@@ -1,6 +1,6 @@
 <h1 align="center">Rocketodo :rocket:</h1>
 
-<img alt="Rocketodo" src="https://i.imgur.com/ROmjWRs.png" />
+<img alt="Rocketodo" src="https://i.imgur.com/Rw6agxc.png" />
 
 > A todo list to track your tasks
 
