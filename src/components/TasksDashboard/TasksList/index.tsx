@@ -4,9 +4,18 @@ import styles from './style.module.scss';
 
 interface TasksListProps {
   tasks: Task[];
+  onDeleteTaskRequest: (id: string) => void;
+  onToggleTaskComplete: (id: string) => void;
 }
 
-export function TasksList({ tasks, onDeleteTaskRequest }: TasksListProps) {
+export function TasksList({
+  tasks,
+  onDeleteTaskRequest,
+  onToggleTaskComplete,
+}: TasksListProps) {
+  const sortedTasksByState = [...tasks].sort((a, b) => {
+    return a.completed === b.completed ? 0 : b.completed ? -1 : 1;
+  });
   const tasksAmount = tasks.length || 0;
   const completedTasksAmount = tasks.filter((task) => task.completed).length;
 
@@ -25,12 +34,12 @@ export function TasksList({ tasks, onDeleteTaskRequest }: TasksListProps) {
         </div>
       </header>
       <div className={styles.taskList}>
-        {tasks.map((task) => (
+        {sortedTasksByState.map((task) => (
           <div
             className={`${styles.item} ${task.completed && styles.completed}`}
             key={task.id}
           >
-            <span>
+            <span onClick={() => onToggleTaskComplete(task.id)}>
               <Check size={16} />
             </span>
             <p>{task.content}</p>
