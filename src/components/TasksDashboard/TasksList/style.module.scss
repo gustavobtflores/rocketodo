@@ -100,3 +100,26 @@
     }
   }
 }
+
+.noTasksAdded {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 4rem 1.5rem;
+  color: #808080;
+  border-top: 1px solid #333333;
+
+  img {
+    margin-bottom: 1.5rem;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  strong,
+  span {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+}

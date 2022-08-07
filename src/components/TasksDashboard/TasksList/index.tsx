@@ -1,5 +1,7 @@
 import { Check, Trash } from 'phosphor-react';
 import { Task } from '..';
+import clipboardIcon from '../../../assets/clipboard.svg';
+
 import styles from './style.module.scss';
 
 interface TasksListProps {
@@ -34,20 +36,28 @@ export function TasksList({
         </div>
       </header>
       <div className={styles.taskList}>
-        {sortedTasksByState.map((task) => (
-          <div
-            className={`${styles.item} ${task.completed && styles.completed}`}
-            key={task.id}
-          >
-            <span onClick={() => onToggleTaskComplete(task.id)}>
-              <Check size={16} />
-            </span>
-            <p>{task.content}</p>
-            <button onClick={() => onDeleteTaskRequest(task.id)}>
-              <Trash size={20} />
-            </button>
+        {sortedTasksByState.length > 0 ? (
+          sortedTasksByState.map((task) => (
+            <div
+              className={`${styles.item} ${task.completed && styles.completed}`}
+              key={task.id}
+            >
+              <span onClick={() => onToggleTaskComplete(task.id)}>
+                <Check size={16} />
+              </span>
+              <p>{task.content}</p>
+              <button onClick={() => onDeleteTaskRequest(task.id)}>
+                <Trash size={20} />
+              </button>
+            </div>
+          ))
+        ) : (
+          <div className={styles.noTasksAdded}>
+            <img src={clipboardIcon} alt="" />
+            <strong>Você ainda não tem tarefas cadastradas</strong>
+            <span>Crie tarefas e organize seus itens a fazer</span>
           </div>
-        ))}
+        )}
       </div>
     </>
   );
