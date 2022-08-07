@@ -6,17 +6,11 @@
 
 ### 🏠 [Homepage](https://rocketodo.vercel.app/)
 
-## Features :gear:
-
--
-- Feat
-- Feat
-
 ## Technologies :rocket:
 
-- Tech
-- Tech
-- Tech
+- [React](https://reactjs.org/)
+- CSS modules
+- [SASS](https://sass-lang.com/)
 
 ## Install
 
@@ -30,14 +24,6 @@ npm install | yarn install
 npm run start | yarn start
 ```
 
-## Run tests
+<br>
 
-```sh
-npm run test // yarn run test
-```
-
-## Author
-
-👤 **Gustavo Bernardo**
-
-- Github: [@gustavobtflores](https://github.com/gustavobtflores)
+_Made with :heart: by Gustavo Bernardo_
